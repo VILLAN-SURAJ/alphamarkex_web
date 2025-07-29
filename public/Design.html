@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Add this in your <head> -->
+<link
+rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
+
+  <title>Alphamarkex - Our Design</title>
+  <style>
+    html, body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #fff;
+      color: #111;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    header, footer {
+      background-color: #f0f8fc;
+      padding: 20px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+    header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: #f1f8fc; /* match the color in your image */
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+    header img, footer img {
+      height: 50px;
+    }
+
+    header nav a, footer nav a {
+      color: #222;
+      text-decoration: none;
+      margin-left: 20px;
+      font-weight: 500;
+    }
+
+    header nav a:hover, footer nav a:hover {
+      color: #007bff;
+    }
+
+    main {
+      padding: 40px;
+      flex-grow: 1;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 36px;
+      margin-bottom: 40px;
+      font-weight: bold;
+      animation: fadeInDown 1s ease-out;
+    }
+
+    @keyframes fadeInDown {
+      from {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .design-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 60px;
+    }
+
+    .design-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 40px;
+      opacity: 0;
+      transform: translateY(50px);
+      animation: fadeInUp 1s ease forwards;
+    }
+
+    .design-row:nth-child(2) { animation-delay: 0.2s; }
+    .design-row:nth-child(3) { animation-delay: 0.4s; }
+    .design-row:nth-child(4) { animation-delay: 0.6s; }
+    .design-row:nth-child(5) { animation-delay: 0.8s; }
+
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .design-card {
+      width: 48%;
+      aspect-ratio: 1 / 1;
+      background-color: #eaeaea;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+    }
+
+    .design-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .design-description {
+      width: 48%;
+      font-size: 16px;
+      line-height: 1.7;
+      color: #333;
+      text-align: center;
+    }
+
+    .design-description h2 {
+      color: #003366;
+      font-size: 24px;
+      margin-bottom: 12px;
+      text-align: center;
+      animation: slideIn 1s ease-in-out;
+    }
+
+    @keyframes slideIn {
+      from { transform: translateX(-20px); opacity: 0; }
+      to { transform: translateX(0); opacity: 1; }
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      .design-row {
+        flex-direction: column;
+      }
+
+      .design-card, .design-description {
+        width: 100%;
+      }
+    }header {
+  background-color: #f0f8fc;
+  padding: 20px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  animation: slideDown 0.8s ease-out forwards;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+header img {
+  height: 50px;
+  cursor: pointer;
+}
+
+header nav a {
+  color: #222;
+  text-decoration: none;
+  margin-left: 20px;
+  font-weight: 500;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+header nav a::after {
+  content: '';
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  background-color: #007bff;
+  transition: width 0.3s ease;
+}
+
+header nav a:hover {
+  color: #007bff;
+}
+
+header nav a:hover::after {
+  width: 100%;
+}
+
+.footer {
+  background-color: #f1f8fc  ;
+  color: #000000;
+  font-family: 'Segoe UI', sans-serif;
+  padding: 30px 15px 10px;
+  font-size: 14px;
+}
+
+.footer-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Exactly 3 equal-width columns */
+  gap: 40px;
+  padding-left: 40px;
+  padding-right: 40px;
+  width: 100%;
+}
+
+
+
+.footer-column {
+  flex: 1 1 200px;
+  min-width: 200px;
+}
+
+.footer-column h4 {
+  font-size: 16px;
+  margin-bottom: 8px;
+  color: #0d0d0d;
+  border-bottom: 2px solid #ffcc00;
+  display: inline-block;
+  padding-bottom: 4px;
+}
+
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-column ul li {
+  margin: 4px 0;
+}
+
+.footer-column ul li a {
+  color: #0d0d0d;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.footer-column ul li a:hover {
+  color: #0d0d0d;
+}
+
+.footer-column p {
+  margin: 4px 0;
+}
+
+.footer-bottom {
+  text-align: center;
+  width: 100%;
+  font-size: 13px;
+  color: #080808;
+  margin-top: 30px;
+  padding-bottom: 10px;
+}
+
+.social-icons a {
+  margin-right: 10px;
+  color: #0e0d0d;
+  font-size: 16px;
+  transition: color 0.3s;
+}
+
+.social-icons a:hover {
+  color: #000000;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 13px;
+  color: #080808;
+}
+/* Base header style */
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* OK for logo vs nav */
+  background-color: #f1f8fc;
+  padding: 20px 40px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  flex-wrap: wrap;
+}
+
+header nav {
+  display: flex;
+  align-items: center;
+}
+
+header nav a {
+  color: #222;
+  text-decoration: none;
+  margin-left: 20px; /* This creates even gap between nav links */
+  font-weight: 500;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+header nav a:first-child {
+  margin-left: 0; /* Prevents first item from having margin */
+}
+/* Hide hamburger on desktop */
+.hamburger {
+  display: none;
+  font-size: 28px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* Mobile behavior */
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background-color: #fff;
+    position: absolute;
+    top: 60px; /* adjust if needed */
+    right: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 10px 15px;
+    border-radius: 8px;
+    z-index: 99;
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+}
+
+.footer {
+  background-color: #f1f8fc;
+  color: #000;
+  font-family: 'Segoe UI', sans-serif;
+  padding: 30px 15px 10px;
+  font-size: 14px;
+}
+
+.footer-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  padding: 0 40px;
+  width: 100%;
+}
+
+.footer-column h4 {
+  font-size: 16px;
+  margin-bottom: 10px;
+  color: #0d0d0d;
+  border-bottom: 2px solid #ffcc00;
+  display: inline-block;
+  padding-bottom: 4px;
+}
+
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-column ul li {
+  margin: 6px 0;
+}
+
+.footer-column ul li a {
+  color: #0d0d0d;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.footer-column ul li a:hover {
+  color: #007bff;
+}
+
+.footer-column p {
+  margin: 6px 0;
+}
+
+.social-icons {
+  margin-top: 8px;
+}
+
+.social-icons a {
+  margin-right: 10px;
+  color: #0e0d0d;
+  font-size: 16px;
+  transition: color 0.3s;
+}
+
+.social-icons a:hover {
+  color: #007bff;
+}
+
+.footer-bottom {
+  text-align: center;
+  font-size: 13px;
+  color: #080808;
+  margin-top: 20px;
+  padding-bottom: 10px;
+}
+
+/* Responsive footer for mobile */
+@media (max-width: 768px) {
+  .footer-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 0 20px;
+  }
+
+  .footer-column {
+    display: none;
+  }
+
+  .footer-column:last-child {
+    display: block; /* Show Contact column only */
+  }
+
+  .footer-column:last-child h4 {
+    display: block;
+  }
+
+  .social-icons {
+    margin-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+}
+@media (max-width: 768px) {
+  .footer-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center horizontally */
+    text-align: center;  /* Center text inside */
+    gap: 20px;
+    padding: 0 20px;
+  }
+
+  .footer-column {
+    display: none;
+  }
+
+  .footer-column:last-child {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-column:last-child h4 {
+    display: block;
+  }
+
+  .social-icons {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .social-icons a {
+    font-size: 18px;
+  }
+}
+/* Base header style */
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #f1f8fc;
+  padding: 20px 40px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  flex-wrap: nowrap;
+}
+
+.logo img {
+  height: 45px;
+}
+
+nav.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+nav.nav-links a {
+  color: #222;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+  position: relative;
+}
+
+nav.nav-links a:hover {
+  color: #007bff;
+}
+
+nav.nav-links a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  background-color: #007bff;
+  transition: width 0.3s ease;
+}
+
+nav.nav-links a:hover::after {
+  width: 100%;
+}
+
+/* Hamburger styles */
+.hamburger {
+  display: none;
+  font-size: 28px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+  nav.nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 70px;
+    right: 20px;
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    z-index: 999;
+  }
+
+  nav.nav-links.show {
+    display: flex;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  header {
+    padding: 20px;
+  }
+
+  .logo img {
+    height: 40px;
+  }
+}
+.service-section {
+      max-width: 1200px;
+      margin: 0 auto 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      background: #fefefe;
+      border-radius: 20px;
+      box-shadow: 0 6px 24px rgba(0, 0, 0, 0.08);
+      overflow: hidden;
+      opacity: 0;
+      transform: translateY(40px);
+      transition: transform 0.8s ease, opacity 0.8s ease;
+      opacity: 0;
+transform: translateY(40px);
+
+    }
+
+    .service-section.animate {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .service-section:nth-child(even) {
+      flex-direction: row-reverse;
+      background-color: #f9f9f9;
+    }
+
+    .service-text, .service-image {
+      flex: 1 1 500px;
+      padding: 40px;
+    }
+
+    .service-text h3 {
+      font-size: 28px;
+      color: #003366;
+      margin-bottom: 20px;
+      transition: color 0.3s ease;
+    }
+
+    .service-section:hover .service-text h3 {
+      color: #f0a500;
+    }
+
+    .service-text p {
+      font-size: 18px;
+      line-height: 1.6;
+      color: #333;
+    }
+
+    .service-image img {
+      width: 100%;
+      height: auto;
+      border-radius: 12px;
+      object-fit: cover;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      transition: transform 0.4s ease;
+    }
+
+    .service-section:hover .service-image img {
+      transform: scale(1.05);
+    }
+   
+   
+
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo" onclick="location.href='main.html'">
+      <img src="./upscalemedia-transformed (5).jpeg" alt="Logo" />
+    </div>
+    <button class="hamburger" onclick="toggleMenu()">☰</button>
+    <nav class="nav-links">
+      <a href="main.html">Home</a>
+      <a href="Design.html">Our Design</a>
+      <a href="sample.html">Portfolio</a>
+      <a href="Services.html">Our Services</a>
+      <a href="Book.html">Book Your Service</a>
+      <a href="about.html">About Us</a>
+    </nav>
+  </header>
+
+  <script>
+    function toggleMenu() {
+      document.querySelector('.nav-links').classList.toggle('show');
+    }
+  </script>
+  <main>
+    
+    
+    <h1>Explore Our Designs</h1>
+
+    <!-- SERVICES -->
+    <!-- Each card block is repeated -->
+    <div class="service-section">
+      <div class="service-text"><h3>Bags</h3><p>Our bag design exemplifies creativity and functionality, perfect for modern retail and promotions. Crafted with aesthetics and usability in mind, these designs boost brand recognition and appeal...</p></div>
+      <div class="service-image"><img src="https://cloud1.email2go.io/c841b23266e204fc9271733469516275/8df20bb25b6a59d60a88dea6a59968591604712c3b18e196bc7df63e810e4219.jpg" alt="Brand Management"></div>
+    </div>
+
+    <div class="service-section">
+      <div class="service-text"><h3>Packaging</h3><p>Our packaging designs blend innovation and identity. Whether it’s eco-conscious materials or premium finishing, we create packages that protect and elevate your product presentation.</p></div>
+      <div class="service-image"><img src="./IMG-20250622-WA0010.jpg" alt="Print Media"></div>
+    </div>
+
+    <div class="service-section">
+      <div class="service-text"><h3>Advertisement</h3><p>Striking and goal-driven, our ad creatives are designed to convert. With eye-catching visuals and strong messaging, our ad designs resonate across social, print, and digital platforms.</p></div>
+      <div class="service-image"><img src="./Artboard 13.jpg" alt="Traditional Marketing"></div>
+    </div>
+
+    <div class="service-section">
+      <div class="service-text"><h3>Perfume</h3><p>From elegance to edge, our perfume branding and design combine sensory cues with luxury appeal. Every visual reflects the mood and identity of your fragrance brand.</p></div>
+      <div class="service-image"><img src="https://cloud1.email2go.io/c841b23266e204fc9271733469516275/48c924abb6be8fc8594d06e4c354868df1a6c1cdd66a69c029f952b8aceba884.png" alt="Social Media"></div>
+    </div>
+   
+    </div>
+    
+   
+  </main>
+
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-column">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="main.html">Home</a></li>
+          <li><a href="Design.html">Our Design</a></li>
+          <li><a href="sample.html">Portfolio</a></li>
+          <li><a href="Services.html">Our Services</a></li>
+          <li><a href="Book.html">Book Your Service</a></li>
+          <li><a href="about.html">About Us</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="#">Social Media Advertising</a></li>
+          <li><a href="#">Traditional Advertising</a></li>
+          <li><a href="#">Marketing Campaigns</a></li>
+          <li><a href="#">Social Media Handling</a></li>
+          <li><a href="#">Web & SEO Solutions</a></li>
+          <li><a href="#">Website</a></li>
+          <li><a href="#">Photoshoot</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h4>Contact</h4>
+        <p>
+          <a href="https://mail.google.com/mail/?view=cm&fs=1&to=team@alphamarkex.com" target="_blank" style="color: inherit; text-decoration: none;">
+            team@alphamarkex.com
+          </a>
+        </p>
+        <p>
+          <a href="tel:+919235860901" style="color: inherit; text-decoration: none;">
+            +91 9235860901
+          </a>
+        </p>
+        <div class="social-icons">
+          <a href="https://www.instagram.com/alphamarkex/?__pwa=1"><i class="fab fa-instagram"></i></a>
+          <a href="https://x.com/AlphaMarkex"><i class="fab fa-x-twitter"></i></i></a>
+          
+
+          <a href="https://www.facebook.com/profile.php?id=61574942258668"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://www.youtube.com/@AlphaMarkeX"><i class="fab fa-youtube"></i></a>
+          <a href="https://wa.me/919235860901"><i class="fab fa-whatsapp"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; 2025 Alphamarkex. All rights reserved.
+    </div>
+  </footer>
+  <script>
+    // Reveal all service sections on load
+    window.addEventListener('DOMContentLoaded', () => {
+      document.querySelectorAll('.service-section').forEach(el => {
+        el.classList.add('animate');
+      });
+    });
+  </script>
+  
+</body>
+
+</html>

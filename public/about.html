@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>About Us | Alphamarkex</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <!-- Add this in your <head> -->
+<link
+rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+/>
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    :root {
+      --bg-color: #fff;
+      --text-color: #222;
+      --section-bg: #fafafa;
+      --card-bg: #fff;
+      --footer-bg: #0a0a0a;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background: var(--bg-color);
+      color: var(--text-color);
+      min-height: 100vh;
+      transition: all 0.3s ease;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    header {
+      border-bottom: 1px solid #ddd;
+      background: var(--bg-color);
+      animation: fadeIn 1s ease-in;
+    }
+    header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: #f1f8fc; /* match the color in your image */
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+    .nav-container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo img {
+      height: 50px;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 24px;
+    }
+
+    nav ul li a {
+      font-weight: 500;
+      font-size: 16px;
+    }
+
+    .brand-hero {
+      background: url('https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=1200&q=80') center/cover no-repeat;
+      padding: 100px 20px;
+      text-align: center;
+      color: #fff;
+      animation: fadeIn 1.5s ease-in;
+    }
+
+    .brand-hero h1 {
+      font-size: 48px;
+      margin-bottom: 15px;
+    }
+
+    .brand-hero p {
+      font-size: 20px;
+      max-width: 800px;
+      margin: auto;
+    }
+
+    .section {
+      max-width: 1000px;
+      margin: 60px auto;
+      padding: 0 20px;
+      background: var(--section-bg);
+      border-radius: 10px;
+      animation: fadeIn 2s ease-in;
+    }
+
+    .section h2 {
+      font-size: 34px;
+      font-weight: 600;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .section p {
+      font-size: 18px;
+      color: var(--text-color);
+      margin-bottom: 15px;
+      text-align: justify;
+    }
+
+    .split-section {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: stretch;
+      margin-top: 60px;
+      animation: fadeInUp 2s ease;
+      background-color: #000;
+    }
+
+    .split-section .image {
+      flex: 1 1 50%;
+      background-size: cover;
+      background-position: center;
+      min-height: 300px;
+    }
+
+    .split-section .content {
+      flex: 1 1 50%;
+      padding: 60px 20px;
+      color: #fff;
+    }
+
+    .split-section h2 {
+      font-size: 34px;
+      margin-bottom: 20px;
+    }
+
+    .split-section p {
+      font-size: 18px;
+      line-height: 1.8;
+      margin-bottom: 15px;
+    }
+
+    .services-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+      margin-top: 30px;
+    }
+
+    .services-list div {
+      background: var(--card-bg);
+      padding: 20px;
+      border-radius: 8px;
+      border: 1px solid #eee;
+      text-align: center;
+      font-size: 16px;
+      animation: fadeInUp 1.5s ease;
+      overflow: hidden;
+      transition: transform 0.3s;
+    }
+
+    .services-list div:hover {
+      transform: scale(1.03);
+    }
+
+    .services-list div img {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+      border-radius: 6px;
+      margin-bottom: 12px;
+    }
+
+    .video-section {
+      text-align: center;
+      margin: 40px auto;
+      animation: fadeIn 2s ease;
+    }
+
+    video {
+      width: 90%;
+      max-width: 800px;
+      border-radius: 10px;
+      margin-top: 20px;
+    }
+
+    .newsletter {
+      text-align: center;
+      margin: 60px auto;
+      padding: 20px;
+      background: var(--card-bg);
+      border-radius: 10px;
+      animation: fadeIn 2s ease;
+    }
+
+    .newsletter input[type="email"] {
+      padding: 10px;
+      width: 250px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      margin-right: 10px;
+    }
+
+    .newsletter button {
+      padding: 10px 20px;
+      border: none;
+      background: #333;
+      color: #fff;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .footer {
+  background-color: #f1f8fc  ;
+  color: #000000;
+  font-family: 'Segoe UI', sans-serif;
+  padding: 30px 15px 10px;
+  font-size: 14px;
+}
+
+.footer-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Exactly 3 equal-width columns */
+  gap: 40px;
+  padding-left: 40px;
+  padding-right: 40px;
+  width: 100%;
+}
+
+
+.footer-column {
+  flex: 1 1 200px;
+  min-width: 200px;
+}
+
+.footer-column h4 {
+  font-size: 16px;
+  margin-bottom: 8px;
+  color: #0d0d0d;
+  border-bottom: 2px solid #ffcc00;
+  display: inline-block;
+  padding-bottom: 4px;
+}
+
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-column ul li {
+  margin: 4px 0;
+}
+
+.footer-column ul li a {
+  color: #0d0d0d;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.footer-column ul li a:hover {
+  color: #0d0d0d;
+}
+
+.footer-column p {
+  margin: 4px 0;
+}
+
+.social-icons a {
+  margin-right: 10px;
+  color: #0e0d0d;
+  font-size: 16px;
+  transition: color 0.3s;
+}
+
+.social-icons a:hover {
+  color: #000000;
+}
+
+.footer-bottom {
+  text-align: center;
+  width: 100%;
+  font-size: 13px;
+  color: #080808;
+  margin-top: 30px;
+  padding-bottom: 10px;
+}
+
+   
+    
+
+    @media(max-width: 768px) {
+      .brand-hero h1 {
+        font-size: 36px;
+      }
+
+      .split-section {
+        flex-direction: column;
+      }
+
+      .split-section .image,
+      .split-section .content {
+        width: 100%;
+        min-height: 200px;
+      }
+
+      .newsletter input[type="email"] {
+        width: 100%;
+        margin-bottom: 10px;
+      }
+
+      .newsletter button {
+        width: 100%;
+      }
+    }
+
+    @keyframes fadeIn {
+      0% { opacity: 0; transform: translateY(10px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeInUp {
+      0% { opacity: 0; transform: translateY(30px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+
+   
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* OK for logo vs nav */
+  background-color: #f1f8fc;
+  padding: 20px 40px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  flex-wrap: wrap;
+}
+
+header nav {
+  display: flex;
+  align-items: center;
+}
+
+header nav a {
+  color: #222;
+  text-decoration: none;
+  margin-left: 20px; /* This creates even gap between nav links */
+  font-weight: 500;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+header nav a:first-child {
+  margin-left: 0; /* Prevents first item from having margin */
+}
+
+.footer {
+  background-color: #f1f8fc;
+  color: #000;
+  font-family: 'Segoe UI', sans-serif;
+  padding: 30px 15px 10px;
+  font-size: 14px;
+}
+
+.footer-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  padding: 0 40px;
+  width: 100%;
+}
+
+.footer-column h4 {
+  font-size: 16px;
+  margin-bottom: 10px;
+  color: #0d0d0d;
+  border-bottom: 2px solid #ffcc00;
+  display: inline-block;
+  padding-bottom: 4px;
+}
+
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-column ul li {
+  margin: 6px 0;
+}
+
+.footer-column ul li a {
+  color: #0d0d0d;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.footer-column ul li a:hover {
+  color: #007bff;
+}
+
+.footer-column p {
+  margin: 6px 0;
+}
+
+.social-icons {
+  margin-top: 8px;
+}
+
+.social-icons a {
+  margin-right: 10px;
+  color: #0e0d0d;
+  font-size: 16px;
+  transition: color 0.3s;
+}
+
+.social-icons a:hover {
+  color: #007bff;
+}
+
+.footer-bottom {
+  text-align: center;
+  font-size: 13px;
+  color: #080808;
+  margin-top: 20px;
+  padding-bottom: 10px;
+}
+
+/* Responsive footer for mobile */
+@media (max-width: 768px) {
+  .footer-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 0 20px;
+  }
+
+  .footer-column {
+    display: none;
+  }
+
+  .footer-column:last-child {
+    display: block; /* Show Contact column only */
+  }
+
+  .footer-column:last-child h4 {
+    display: block;
+  }
+
+  .social-icons {
+    margin-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+}
+@media (max-width: 768px) {
+  .footer-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center horizontally */
+    text-align: center;  /* Center text inside */
+    gap: 20px;
+    padding: 0 20px;
+  }
+
+  .footer-column {
+    display: none;
+  }
+
+  .footer-column:last-child {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-column:last-child h4 {
+    display: block;
+  }
+
+  .social-icons {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .social-icons a {
+    font-size: 18px;
+  }
+}
+/* Base header style */
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #f1f8fc;
+  padding: 20px 40px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  flex-wrap: nowrap;
+}
+
+.logo img {
+  height: 45px;
+}
+
+nav.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+nav.nav-links a {
+  color: #222;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+  position: relative;
+}
+
+nav.nav-links a:hover {
+  color: #007bff;
+}
+
+nav.nav-links a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  background-color: #007bff;
+  transition: width 0.3s ease;
+}
+
+nav.nav-links a:hover::after {
+  width: 100%;
+}
+
+/* Hamburger styles */
+.hamburger {
+  display: none;
+  font-size: 28px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+  nav.nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 70px;
+    right: 20px;
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    z-index: 999;
+  }
+
+  nav.nav-links.show {
+    display: flex;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  header {
+    padding: 20px;
+  }
+
+  .logo img {
+    height: 40px;
+  }
+}
+
+
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="logo" onclick="location.href='main.html'">
+      <img src="./upscalemedia-transformed (5).jpeg" alt="Logo" />
+    </div>
+    <button class="hamburger" onclick="toggleMenu()">☰</button>
+    <nav class="nav-links">
+      <a href="main.html">Home</a>
+      <a href="Design.html">Our Design</a>
+      <a href="sample.html">Portfolio</a>
+      <a href="Services.html">Our Services</a>
+      <a href="Book.html">Book Your Service</a>
+      <a href="about.html">About Us</a>
+    </nav>
+  </header>
+  
+  
+  <script>
+    function toggleMenu() {
+      document.querySelector('.nav-links').classList.toggle('show');
+    }
+  </script>
+  
+
+<section class="brand-hero">
+  <h1>About AlphaMarkeX</h1>
+  <p>At Alphamarkex, we are a performance-driven marketing firm dedicated to helping brands grow with clarity, creativity, and conversion.</p>
+</section>
+
+<div class="section">
+  <h2>Our Story</h2>
+  <p>In a world buzzing with brands, Alphamarkex was born not just to be another marketing agency — but to become the alpha voice in the marketplace.
+  Founded with a fierce belief that every brand has a story worth telling, Alphamarkex emerged from the fusion of creativity, data, and bold ambition. What started as a small team of dreamers, designers, and digital strategists quickly grew into a full-force branding and marketing agency — helping businesses of all sizes amplify their identity, capture attention, and convert ideas into impact. We are brand architects, growth hackers, and storytellers.</p>
+</div>
+
+<div class="split-section">
+  <div class="image" style="background-image:url('https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=800&q=80');"></div>
+  <div class="content">
+    <h2>Our Vision</h2>
+    <p>At Alphamarkex, we believe marketing is not just about visibility — it’s about direction, impact, and growth. In today’s fast-moving world, where businesses often overlook the connection between marketing and sales, we bring the clarity that aligns both. Our vision is to deliver real marketing — rooted in strategy, creativity, and purpose — while filtering out the noise of unreliable providers.</p>
+    <h2>Our Mission</h2>
+    <p>Our mission is to bridge the gap in the market by being a trusted partner, offering authentic, result-driven services that truly help businesses grow. We aim to build long-term relationships based on trust, performance, and shared success. Just like a structure stands tall on strong foundations, we support every client with passion, planning, and precision — the 3Ps that define us.</p>
+  </div>
+</div>
+
+<div class="section">
+  <h2>What We Offer</h2>
+  <div class="services-list">
+    <div>
+      <img src="https://cloud1.email2go.io/991becb4d6456d01dad848301495f0ea/f39cf869982c064202b9d97a927f626019cd299741b5603cfb32697adbbd04f8.png" alt="Social Media Marketing">
+      <strong>Social Media Marketing</strong><br>
+      Grow your audience with strategic content and consistent engagement.
+    </div>
+    <div>
+      <img src="https://cloud1.email2go.io/991becb4d6456d01dad848301495f0ea/5000927e792116a45c811d5b89a3a0146bbfc42c579a92f90e0d1817f22f6dff.png" alt="Traditional Advertising">
+      <strong>Traditional Advertising</strong><br>
+      Drive impact through TV, radio, print, and outdoor brand campaigns.
+    </div>
+    <div>
+      <img src="https://cloud1.email2go.io/991becb4d6456d01dad848301495f0ea/7bafb9968da23c9993eb469cdaae3d572f71588bd1d3fa5ae130e522207d6ccb.png" alt="Campaigns">
+      <strong>Campaigns (Email, Google, Audio/SMS)</strong><br>
+      Targeted campaigns that deliver your message directly and effectively.
+    </div>
+    <div>
+      <img src="https://cloud1.email2go.io/991becb4d6456d01dad848301495f0ea/f85edad08a22b80684fdc9993dafb4dfd22b08cf1032736ea4c11d1caa2774cf.png" alt="SEO & Web Dev">
+      <strong>SEO </strong><br>
+      Optimize your online presence with smart design and top Google rankings.
+    </div>
+    <div>
+      <img src="https://cloud1.email2go.io/991becb4d6456d01dad848301495f0ea/afd3b1c87ceb4af7947e1d677e455eb646c09351e05da4a98c9a0d9abc8f0c44.png" alt="Website">
+      <strong>Website</strong><br>
+      Design high-performing websites that convert visitors into loyal customers.
+    </div>
+    <div>
+      <img src="https://cloud1.email2go.io/991becb4d6456d01dad848301495f0ea/4fc8cb93136402e1ca5bfe04613b6020e3e94380c5079003fa93822a43049c2e.png" alt="Photoshoot">
+      <strong>Photoshoot</strong><br>
+      Professional photography that elevates your brand’s visual storytelling.
+    </div>
+    <div>
+      <img src="https://cloud1.email2go.io/991becb4d6456d01dad848301495f0ea/f71c024c9343dbebd7a8473c43e87a5921f09fe8ccf8455a2a62a25b770c7210.png" alt="Branding">
+      <strong>Branding</strong><br>
+      Craft a powerful identity that reflects your values and sets you apart.
+    </div>
+    <div>
+      <img src="https://cloud1.email2go.io/991becb4d6456d01dad848301495f0ea/6717262d5db0ce14fd2b5d2ac12ee238e33b5a81dd37844ff0fa5dad8ba5b8ec.png" alt="Packaging Designing">
+      <strong>Packaging Designing</strong><br>
+      Design packaging that attracts, communicates, and sells your product.
+    </div>
+  </div>
+</div>
+
+<div class="video-section">
+  <h2>Introduction</h2>
+  <video controls>
+    <source src="./WhatsApp Video 2025-07-19 at 20.25.06_7347801a.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+</div>
+
+<div class="newsletter">
+  <h2>Join Our Newsletter</h2>
+  <p>Stay updated with the latest insights and marketing tips.</p>
+  <form onsubmit="event.preventDefault(); alert('Thank you for subscribing!');">
+    <input type="email" placeholder="Your Email" required>
+    <button type="submit">Subscribe</button>
+  </form>
+</div>
+
+<audio autoplay loop hidden>
+  <source src="background-music.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
+
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-column">
+      <h4>Company</h4>
+      <ul>
+        <li><a href="main.html">Home</a></li>
+        <li><a href="Design.html">Our Design</a></li>
+        <li><a href="sample.html">Portfolio</a></li>
+        <li><a href="Services.html">Our Services</a></li>
+        <li><a href="Book.html">Book Your Service</a></li>
+        <li><a href="about.html">About Us</a></li>
+      </ul>
+    </div>
+    <div class="footer-column">
+      <h4>Services</h4>
+      <ul>
+        <li><a href="#">Social Media Advertising</a></li>
+        <li><a href="#">Traditional Advertising</a></li>
+        <li><a href="#">Marketing Campaigns</a></li>
+        <li><a href="#">Social Media Handling</a></li>
+        <li><a href="#">Web & SEO Solutions</a></li>
+        <li><a href="#">Website</a></li>
+        <li><a href="#">Photoshoot</a></li>
+      </ul>
+    </div>
+    <div class="footer-column">
+      <h4>Contact</h4>
+      <p>
+        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=team@alphamarkex.com" target="_blank" style="color: inherit; text-decoration: none;">
+          team@alphamarkex.com
+        </a>
+      </p>
+      <p>
+        <a href="tel:+919235860901" style="color: inherit; text-decoration: none;">
+          +91 9235860901
+        </a>
+      </p>
+      <div class="social-icons">
+        <a href="https://www.instagram.com/alphamarkex/?__pwa=1"><i class="fab fa-instagram"></i></a>
+        <a href="https://x.com/AlphaMarkex"><i class="fab fa-x-twitter"></i>
+        </i></a>
+        <a href="https://www.facebook.com/profile.php?id=61574942258668"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.youtube.com/@AlphaMarkeX"><i class="fab fa-youtube"></i></a>
+        <a href="https://wa.me/919235860901" target="_blank">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    &copy; 2025 Alphamarkex. All rights reserved.
+  </div>
+</footer>
+
+
+</body>
+</html>

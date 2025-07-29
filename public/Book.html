@@ -1,0 +1,863 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Add in your <head> if not already included -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+<!-- Add this in your <head> -->
+  <link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+/>
+
+  <title>Get A Quote - Alphamarkex</title>
+  <style>
+    html, body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: url('https://images.unsplash.com/photo-1581091870622-4c4d0a7eb3f3') no-repeat center center/cover;
+      color: #111;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      animation: fadeIn 1s ease-in;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+    }
+
+    header, footer {
+      background-color: #f0f8fc;
+      padding: 20px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    header img, footer img {
+      height: 50px;
+    }
+
+    header nav a, footer nav a {
+      color: #222;
+      text-decoration: none;
+      margin-left: 20px;
+      font-weight: 500;
+    }
+
+    header nav a:hover, footer nav a:hover {
+      color: var(--accent);
+    }
+    header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: #f1f8fc; /* match the color in your image */
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+   
+
+
+    main {
+      background-color: rgba(255, 255, 255, 0.9);
+      margin: 40px;
+      padding: 40px;
+      border-radius: 10px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: flex-start;
+      animation: slideUp 1s ease-in-out;
+    }
+
+    @keyframes slideUp {
+      from { transform: translateY(30px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    .contact-info {
+      max-width: 40%;
+    }
+
+    .contact-info h2 {
+      font-size: 28px;
+      color: #003366;
+    }
+
+    .contact-info p {
+      margin-top: 16px;
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    .contact-info strong {
+      display: inline-block;
+      margin-top: 16px;
+    }
+
+    .quote-form {
+      max-width: 55%;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .quote-form input,
+    .quote-form select,
+    .quote-form textarea {
+      padding: 10px;
+      font-size: 16px;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+      width: 100%;
+    }
+
+    .quote-form textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+
+    .quote-form button {
+      background-color: #003366;
+      color: #fff;
+      padding: 12px;
+      font-size: 16px;
+      border: none;
+      cursor: pointer;
+      border-radius: 4px;
+      transition: background-color 0.3s ease;
+    }
+
+    .quote-form button:hover {
+      background-color: #f0a500;
+    }
+
+    
+    header {
+  background-color: #f0f8fc;
+  padding: 20px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  animation: slideDown 0.8s ease-out forwards;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+header img {
+  height: 50px;
+  cursor: pointer;
+}
+
+header nav a {
+  color: #222;
+  text-decoration: none;
+  margin-left: 20px;
+  font-weight: 500;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+header nav a::after {
+  content: '';
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  background-color: #007bff;
+  transition: width 0.3s ease;
+}
+
+header nav a:hover {
+  color: #007bff;
+}
+
+header nav a:hover::after {
+  width: 100%;
+}
+
+
+.footer {
+  background-color: #f1f8fc  ;
+  color: #000000;
+  font-family: 'Segoe UI', sans-serif;
+  padding: 30px 15px 10px;
+  font-size: 14px;
+}
+
+.footer-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Exactly 3 equal-width columns */
+  gap: 40px;
+  padding-left: 40px;
+  padding-right: 40px;
+  width: 100%;
+}
+
+
+.footer-column {
+  flex: 1 1 200px;
+  min-width: 200px;
+}
+
+.footer-column h4 {
+  font-size: 16px;
+  margin-bottom: 8px;
+  color: #0d0d0d;
+  border-bottom: 2px solid #ffcc00;
+  display: inline-block;
+  padding-bottom: 4px;
+}
+
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-column ul li {
+  margin: 4px 0;
+}
+
+.footer-column ul li a {
+  color: #0d0d0d;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.footer-column ul li a:hover {
+  color: #0d0d0d;
+}
+
+.footer-column p {
+  margin: 4px 0;
+}
+
+.social-icons a {
+  margin-right: 10px;
+  color: #0e0d0d;
+  font-size: 16px;
+  transition: color 0.3s;
+}
+
+.social-icons a:hover {
+  color: #000000;
+}
+
+.footer-bottom {
+  text-align: center;
+  width: 100%;
+  font-size: 13px;
+  color: #080808;
+  margin-top: 30px;
+  padding-bottom: 10px;
+}
+
+.contact-info {
+  position: relative;
+  background: rgba(255, 255, 255, 0.92);
+  padding: 30px 25px;
+  border-radius: 18px;
+  max-width: 420px;
+  overflow: hidden;
+  z-index: 1;
+  font-family: 'Segoe UI', sans-serif;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
+  text-align: center;
+  margin: auto;
+}
+
+/* Background image with opacity */
+.contact-info::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('your-background.jpg'); /* Replace with actual path */
+  background-size: cover;
+  background-position: center;
+  opacity: 0.35;
+  z-index: -1;
+}
+
+/* Centered and bigger logo */
+.contact-info .logo {
+  max-width: 140px;
+  margin: 0 auto 20px;
+  display: block;
+}
+
+/* Headings */
+.contact-info h2 {
+  margin-bottom: 12px;
+  font-size: 24px;
+  color: #063970;
+}
+
+/* Text styling */
+.contact-info p {
+  font-size: 16px;
+  margin: 12px 0;
+  color: #063970;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contact-info i {
+  font-size: 18px;
+  margin-right: 10px;
+  color: #063970;
+}
+
+.contact-info a {
+  color: #063970;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.contact-info a:hover {
+  color: #000;
+  text-decoration: underline;
+}
+
+.footer {
+  background-color: #f1f8fc;
+  color: #000;
+  font-family: 'Segoe UI', sans-serif;
+  padding: 30px 15px 10px;
+  font-size: 14px;
+}
+
+.footer-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  padding: 0 40px;
+  width: 100%;
+}
+
+.footer-column h4 {
+  font-size: 16px;
+  margin-bottom: 10px;
+  color: #0d0d0d;
+  border-bottom: 2px solid #ffcc00;
+  display: inline-block;
+  padding-bottom: 4px;
+}
+
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-column ul li {
+  margin: 6px 0;
+}
+
+.footer-column ul li a {
+  color: #0d0d0d;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.footer-column ul li a:hover {
+  color: #007bff;
+}
+
+.footer-column p {
+  margin: 6px 0;
+}
+
+.social-icons {
+  margin-top: 8px;
+}
+
+.social-icons a {
+  margin-right: 10px;
+  color: #0e0d0d;
+  font-size: 16px;
+  transition: color 0.3s;
+}
+
+.social-icons a:hover {
+  color: #007bff;
+}
+
+.footer-bottom {
+  text-align: center;
+  font-size: 13px;
+  color: #080808;
+  margin-top: 20px;
+  padding-bottom: 10px;
+}
+
+/* Responsive footer for mobile */
+@media (max-width: 768px) {
+  .footer-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 0 20px;
+  }
+
+  .footer-column {
+    display: none;
+  }
+
+  .footer-column:last-child {
+    display: block; /* Show Contact column only */
+  }
+
+  .footer-column:last-child h4 {
+    display: block;
+  }
+
+  .social-icons {
+    margin-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+}
+@media (max-width: 768px) {
+  .footer-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center horizontally */
+    text-align: center;  /* Center text inside */
+    gap: 20px;
+    padding: 0 20px;
+  }
+
+  .footer-column {
+    display: none;
+  }
+
+  .footer-column:last-child {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-column:last-child h4 {
+    display: block;
+  }
+
+  .social-icons {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .social-icons a {
+    font-size: 18px;
+  }
+}
+/* Base header style */
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #f1f8fc;
+  padding: 20px 40px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  flex-wrap: nowrap;
+}
+
+.logo img {
+  height: 45px;
+}
+
+nav.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+nav.nav-links a {
+  color: #222;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+  position: relative;
+}
+
+nav.nav-links a:hover {
+  color: #007bff;
+}
+
+nav.nav-links a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  background-color: #007bff;
+  transition: width 0.3s ease;
+}
+
+nav.nav-links a:hover::after {
+  width: 100%;
+}
+
+/* Hamburger styles */
+.hamburger {
+  display: none;
+  font-size: 28px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+  nav.nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 70px;
+    right: 20px;
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    z-index: 999;
+  }
+
+  nav.nav-links.show {
+    display: flex;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  header {
+    padding: 20px;
+  }
+
+  .logo img {
+    height: 40px;
+  }
+}
+/* Ensure body doesn't hide behind sticky header */
+main, section, .contact-container {
+  margin-top: 80px; /* adjust based on header height */
+  padding: 0 20px;
+}
+
+/* Form layout */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+form input,
+form select,
+form textarea {
+  padding: 10px 12px;
+  font-size: 15px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Send button styling */
+form button[type="submit"] {
+  padding: 12px;
+  background-color: #003366;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+form button[type="submit"]:hover {
+  background-color: #0055aa;
+}
+
+/* Ensure contact box spacing */
+.contact-card {
+  text-align: center;
+  margin-bottom: 30px;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.contact-form-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 40px;
+}
+
+
+@media (max-width: 768px) {
+  .contact-form-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .contact-info,
+  .quote-form {
+    max-width: 100% !important;
+    width: 100%;
+    margin: 0;
+  }
+
+  main {
+    margin: 20px 10px;
+    padding: 20px 10px;
+  }
+}
+/* Mobile layout for form and contact info */
+@media (max-width: 768px) {
+  .contact-form-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .contact-info,
+  .quote-form {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+}
+
+/* Container layout for form + contact info */
+.contact-form-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 40px;
+  padding: 40px;
+  flex-wrap: nowrap;
+}
+
+/* Contact Info styles specific to layout */
+.contact-info {
+  flex: 1;
+  max-width: 40%;
+  margin: 0;
+}
+
+/* Quote Form layout */
+.quote-form {
+  flex: 1;
+  max-width: 55%;
+  width: 100%;
+}
+
+/* Responsive stacking on mobile */
+@media (max-width: 768px) {
+  .contact-form-container {
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+
+  .contact-info,
+  .quote-form {
+    max-width: 100% !important;
+    width: 100% !important;
+    margin: 0 auto;
+  }
+}
+
+
+
+  </style>
+</head>
+<body>
+<!-- Replace your existing <header> block with this one -->
+
+  <header>
+    <div class="logo" onclick="location.href='main.html'">
+      <img src="./upscalemedia-transformed (5).jpeg" alt="Logo" />
+    </div>
+    <button class="hamburger" onclick="toggleMenu()">☰</button>
+    <nav class="nav-links">
+      <a href="main.html">Home</a>
+      <a href="Design.html">Our Design</a>
+      <a href="sample.html">Portfolio</a>
+      <a href="Services.html">Our Services</a>
+      <a href="Book.html">Book Your Service</a>
+      <a href="about.html">About Us</a>
+    </nav>
+  </header>
+  
+  <script>
+    function toggleMenu() {
+      document.querySelector('.nav-links').classList.toggle('show');
+    }
+  </script>
+  <main>
+    <div class="contact-form-container">
+      
+      <!-- Contact Info Section -->
+      <div class="contact-info">
+        <img src="./upscalemedia-transformed (5).jpeg" alt="Alphamarkex Logo" class="logo" />
+  
+        <h2>We’d love to hear from you</h2>
+        <p>
+          Whether you have a question, project, or partnership in mind — our team is ready to help.<br>
+          Reach out through the form or use the contact details below.
+        </p>
+  
+        <p><i class="fas fa-envelope"></i> <a href="mailto:team@alphamarkex.com">team@alphamarkex.com</a></p>
+        <p><i class="fab fa-whatsapp"></i> <a href="tel:+919235860901">+91 9235860901</a></p>
+        <p><i class="fab fa-instagram"></i> <a href="https://www.instagram.com/alphamarkex/" target="_blank">@alphamarkex</a></p>
+      </div>
+  
+      <!-- Form Section -->
+      <form class="quote-form" id="quoteForm">
+        <input type="text" name="name" placeholder="Your Name *" required>
+        <input type="text" name="business" placeholder="Your Business or Organization Name *" required>
+        <select name="requirement" required>
+          <option value="">Requirement *</option>
+          <option>Branding</option>
+          <option>Marketing</option>
+          <option>Event Planning</option>
+          <option>Advertising</option>
+        </select>
+        <input type="email" name="email" placeholder="Email *" required>
+        <input type="number" name="phone" placeholder="Phone *" required>
+        <select name="budget" required>
+          <option value="">Your Budget *</option>
+          <option>Less than ₹10,000</option>
+          <option>₹10,000 - ₹50,000</option>
+          <option>Above ₹50,000</option>
+        </select>
+        <textarea name="message" placeholder="Message"></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+  
+    </div>
+  </main>
+  
+  
+
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-column">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="main.html">Home</a></li>
+          <li><a href="Design.html">Our Design</a></li>
+          <li><a href="sample.html">Portfolio</a></li>
+          <li><a href="Services.html">Our Services</a></li>
+          <li><a href="Book.html">Book Your Service</a></li>
+          <li><a href="about.html">About Us</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="#">Social Media Advertising</a></li>
+          <li><a href="#">Traditional Advertising</a></li>
+          <li><a href="#">Marketing Campaigns</a></li>
+          <li><a href="#">Social Media Handling</a></li>
+          <li><a href="#">Web & SEO Solutions</a></li>
+          <li><a href="#">Website</a></li>
+          <li><a href="#">Photoshoot</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h4>Contact</h4>
+        <p>
+          <a href="https://mail.google.com/mail/?view=cm&fs=1&to=team@alphamarkex.com" target="_blank" style="color: inherit; text-decoration: none;">
+            team@alphamarkex.com
+          </a>
+        </p>
+        <p>
+          <a href="tel:+919235860901" style="color: inherit; text-decoration: none;">
+            +91 9235860901
+          </a>
+        </p>
+        <div class="social-icons">
+          <a href="https://www.instagram.com/alphamarkex/?__pwa=1"><i class="fab fa-instagram"></i></a>
+          <a href="https://x.com/AlphaMarkex"><i class="fab fa-x-twitter"></i></i></a>
+          <a href="https://www.facebook.com/profile.php?id=61574942258668"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://www.youtube.com/@AlphaMarkeX"><i class="fab fa-youtube"></i></a>
+           <a href="https://wa.me/919235860901"><i class="fab fa-whatsapp"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; 2025 Alphamarkex. All rights reserved.
+    </div>
+  </footer>
+
+  <script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycby0N7fVlSCzOkbdx9-43KUedMV75Pg_8misNAFM7QlYHRQdkNnxFb3MsGUQpWcS1fOx/exec';
+    const form = document.getElementById('quoteForm');
+
+    form.addEventListener('submit', e => {
+      e.preventDefault();
+      const formData = new FormData(form);
+
+      fetch(scriptURL, {
+        method: 'POST',
+        body: formData
+      })
+      .then(response => {
+        if (response.ok) {
+          alert("✅ Thank you! Your message has been submitted.");
+          form.reset();
+        } else {
+          alert("❌ Error submitting form. Please try again.");
+        }
+      })
+      .catch(error => {
+        alert("❌ There was an error. Please try again.");
+        console.error('Error!', error.message);
+      });
+    });
+  </script>
+</body>
+</html>

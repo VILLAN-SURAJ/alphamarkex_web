@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+
+<!-- ✅ Good: Font Awesome 6.5 (has fa-x-twitter) -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <title>Alphamarkex - Home</title>
+  <style>
+    :root {
+      --bg: #ffffff;
+      --accent: #007bff;
+      --accent-hover: #339dff;
+      --text: #222222;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      opacity: 0;
+      animation: fadeIn 1s ease-in forwards;
+    }
+
+    @keyframes fadeIn {
+      to { opacity: 1; }
+    }
+
+    header, footer {
+      background-color: #f0f8fc;
+      padding: 20px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      animation: slideDown 0.8s ease-out forwards;
+    }
+    header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: #f1f8fc; /* match the color in your image */
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+    @keyframes slideDown {
+      from {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    header img, footer img {
+      height: 50px;
+    }
+
+    header nav a, footer nav a {
+      color: #222;
+      text-decoration: none;
+      margin-left: 20px;
+      font-weight: 500;
+      position: relative;
+      transition: color 0.3s ease;
+    }
+
+    header nav a::after {
+      content: '';
+      position: absolute;
+      width: 0%;
+      height: 2px;
+      bottom: -4px;
+      left: 0;
+      background-color: var(--accent);
+      transition: width 0.3s ease;
+    }
+
+    header nav a:hover {
+      color: var(--accent);
+    }
+
+    header nav a:hover::after {
+      width: 100%;
+    }
+
+   
+
+@media screen and (max-width: 768px) {
+  .header-image {
+    aspect-ratio: 4 / 3; /* More vertical space on mobile */
+  }
+}
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    main {
+      padding: 60px 40px;
+      text-align: center;
+    }
+
+    main h1 {
+      font-size: 36px;
+      margin-bottom: 20px;
+      animation: fadeInUp 1.2s ease forwards;
+    }
+
+    main p {
+      max-width: 800px;
+      margin: 0 auto 40px auto;
+      font-size: 18px;
+      animation: fadeInUp 1.5s ease forwards;
+    }
+
+    .card-section {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      padding: 40px 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .card {
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    .card i {
+      font-size: 30px;
+      color: #007bff;
+      margin-bottom: 15px;
+    }
+
+    .card h3 {
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      font-size: 14px;
+      color: #555;
+    }
+    .footer {
+  background-color: #f1f8fc  ;
+  color: #000000;
+  font-family: 'Segoe UI', sans-serif;
+  padding: 30px 15px 10px;
+  font-size: 14px;
+}
+
+.footer-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Exactly 3 equal-width columns */
+  gap: 40px;
+  padding-left: 40px;
+  padding-right: 40px;
+  width: 100%;
+}
+.footer-bottom {
+  text-align: center;
+  width: 100%;
+  font-size: 13px;
+  color: #080808;
+  margin-top: 30px;
+  padding-bottom: 10px;
+}
+
+
+.footer-column {
+  flex: 1 1 200px;
+  min-width: 200px;
+}
+
+.footer-column h4 {
+  font-size: 16px;
+  margin-bottom: 8px;
+  color: #0d0d0d;
+  border-bottom: 2px solid #ffcc00;
+  display: inline-block;
+  padding-bottom: 4px;
+}
+
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-column ul li {
+  margin: 4px 0;
+}
+
+.footer-column ul li a {
+  color: #0d0d0d;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.footer-column ul li a:hover {
+  color: #0d0d0d;
+}
+
+.footer-column p {
+  margin: 4px 0;
+}
+
+.social-icons a {
+  margin-right: 10px;
+  color: #0e0d0d;
+  font-size: 16px;
+  transition: color 0.3s;
+}
+
+.social-icons a:hover {
+  color: #000000;
+}
+
+
+/* Hide nav and show hamburger on small screens */
+nav {
+  display: none;
+  flex-direction: column;
+  background-color: #f1f8fc;
+  width: 100%;
+  text-align: right;
+  padding-top: 10px;
+}
+
+nav.show {
+  display: flex;
+}
+
+.menu-toggle {
+  display: block;
+  font-size: 24px;
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+
+/* Desktop view */
+@media screen and (min-width: 768px) {
+  nav {
+    display: flex !important;
+    flex-direction: row;
+    justify-content: flex-end;
+    width: auto;
+    padding-top: 0;
+  }
+
+  .menu-toggle {
+    display: none;
+  }
+}
+@media screen and (max-width: 768px) {
+  .footer-container {
+    grid-template-columns: 1fr; /* stack vertically */
+    gap: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    text-align: center;
+  }
+
+  .footer-column h4 {
+    text-align: center;
+  }
+
+  .social-icons {
+    justify-content: center;
+  }
+
+  .footer-column ul {
+    padding-left: 0;
+  }
+}
+.social-icons {
+  display: flex;
+  justify-content: flex-start; /* left on desktop */
+  flex-wrap: wrap;
+}
+
+@media screen and (max-width: 768px) {
+  .social-icons {
+    justify-content: center;
+  }
+}
+.hero-container {
+  width: 100%;
+  overflow: hidden;
+}
+
+.hero-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain; /* Ensures entire image fits in */
+}
+
+/* Default visibility */
+.desktop-footer {
+  display: block;
+}
+.mobile-footer {
+  display: none;
+}
+
+/* On mobile, switch visibility */
+@media screen and (max-width: 768px) {
+  .desktop-footer {
+    display: none !important;
+  }
+  .mobile-footer {
+    display: block !important;
+  }
+}
+/* Hide on desktop */
+/* ✅ Default (desktop) — hide mobile menu */
+
+.footer {
+  background-color: #f1f8fc;
+  color: #000;
+  font-family: 'Segoe UI', sans-serif;
+  padding: 30px 15px 10px;
+  font-size: 14px;
+}
+
+.footer-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  padding: 0 40px;
+  width: 100%;
+}
+
+.footer-column h4 {
+  font-size: 16px;
+  margin-bottom: 10px;
+  color: #0d0d0d;
+  border-bottom: 2px solid #ffcc00;
+  display: inline-block;
+  padding-bottom: 4px;
+}
+
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-column ul li {
+  margin: 6px 0;
+}
+
+.footer-column ul li a {
+  color: #0d0d0d;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.footer-column ul li a:hover {
+  color: #007bff;
+}
+
+.footer-column p {
+  margin: 6px 0;
+}
+
+.social-icons {
+  margin-top: 8px;
+}
+
+.social-icons a {
+  margin-right: 10px;
+  color: #0e0d0d;
+  font-size: 16px;
+  transition: color 0.3s;
+}
+
+.social-icons a:hover {
+  color: #007bff;
+}
+
+.footer-bottom {
+  text-align: center;
+  font-size: 13px;
+  color: #080808;
+  margin-top: 20px;
+  padding-bottom: 10px;
+}
+
+/* Responsive footer for mobile */
+@media (max-width: 768px) {
+  .footer-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 0 20px;
+  }
+
+  .footer-column {
+    display: none;
+  }
+
+  .footer-column:last-child {
+    display: block; /* Show Contact column only */
+  }
+
+  .footer-column:last-child h4 {
+    display: block;
+  }
+
+  .social-icons {
+    margin-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+}
+@media (max-width: 768px) {
+  .footer-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center horizontally */
+    text-align: center;  /* Center text inside */
+    gap: 20px;
+    padding: 0 20px;
+  }
+
+  .footer-column {
+    display: none;
+  }
+
+  .footer-column:last-child {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-column:last-child h4 {
+    display: block;
+  }
+
+  .social-icons {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .social-icons a {
+    font-size: 18px;
+  }
+}
+
+/* Base header style */
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #f1f8fc;
+  padding: 20px 40px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  flex-wrap: nowrap;
+}
+
+.logo img {
+  height: 45px;
+}
+
+nav.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+nav.nav-links a {
+  color: #222;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+  position: relative;
+}
+
+nav.nav-links a:hover {
+  color: #007bff;
+}
+
+nav.nav-links a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  background-color: #007bff;
+  transition: width 0.3s ease;
+}
+
+nav.nav-links a:hover::after {
+  width: 100%;
+}
+
+/* Hamburger styles */
+.hamburger {
+  display: none;
+  font-size: 28px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+  nav.nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 70px;
+    right: 20px;
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    z-index: 999;
+  }
+
+  nav.nav-links.show {
+    display: flex;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  header {
+    padding: 20px;
+  }
+
+  .logo img {
+    height: 40px;
+  }
+}
+
+  </style>
+</head>
+<body>
+  <!-- HEADER -->
+  <header>
+    <div class="logo" onclick="location.href='main.html'">
+      <img src="./upscalemedia-transformed (5).jpeg" alt="Logo" />
+    </div>
+    <button class="hamburger" onclick="toggleMenu()">☰</button>
+    <nav class="nav-links">
+      <a href="main.html">Home</a>
+      <a href="Design.html">Our Design</a>
+      <a href="sample.html">Portfolio</a>
+      <a href="Services.html">Our Services</a>
+      <a href="Book.html">Book Your Service</a>
+      <a href="about.html">About Us</a>
+    </nav>
+  </header>
+  <!-- MOBILE NAVBAR -->
+
+  <script>
+    function toggleMenu() {
+      document.querySelector('.nav-links').classList.toggle('show');
+    }
+  </script>
+
+  <!-- IMAGE SECTION -->
+  <div class="hero-container">
+    <img src="https://cloud1.email2go.io/4b5e104aff8d766f766da12284d53651/f82663b7f67b7aecc38e23b03a7d6f3a73eb546f208a7cf12f52b042177f5734.jpg" alt="Hero banner" class="hero-img" />
+  </div>
+  
+
+  <!-- MAIN -->
+  <main>
+    <h1>Welcome to Alphamarkex</h1>
+    <p>We provide a complete suite of branding, digital marketing, and advertising solutions to elevate your business. Explore our expertise in every dimension of media and communication.</p>
+  </main>
+
+  <!-- SERVICE CARDS -->
+  <section class="card-section">
+    <div class="card">
+      <i class="fas fa-bullhorn"></i>
+      <h3>Digital Marketing</h3>
+      <p>Targeted campaigns including social media, SEO, and PPC to help you grow fast.</p>
+    </div>
+    <div class="card">
+      <i class="fas fa-laptop-code"></i>
+      <h3>Web Development</h3>
+      <p>Clean, responsive websites that perform beautifully across all devices.</p>
+    </div>
+    <div class="card">
+      <i class="fas fa-paint-brush"></i>
+      <h3>Brand Design</h3>
+      <p>Visual identities, logos, and product packaging that speak your brand story.</p>
+    </div>
+    <div class="card">
+      <i class="fas fa-camera-retro"></i>
+      <h3>Photoshoots</h3>
+      <p>Professional photography for products, ads, and brand storytelling.</p>
+    </div>
+
+    <div class="card">
+      <i class="fas fa-bullhorn"></i>
+      <h3>Paid Advertisement</h3>
+      <p>Branded UGC and ad creatives that feel native, not salesy.</p>
+    </div>
+    
+    
+
+    <div class="card">
+      <i class="fas fa-search"></i>
+      <h3>SEO Optimization</h3>
+      <p>Boost your visibility with on-page, off-page, and technical SEO that drives organic traffic.</p>
+    </div>
+    
+    <div class="card">
+      <i class="fas fa-film"></i>
+      <h3>Video Editing</h3>
+      <p>Dynamic, high-quality edits for reels, ads, and branded content that captivate your audience.</p>
+    </div>
+
+    <div class="card">
+      <i class="fas fa-pen-nib"></i>
+      <h3>Logo Designing</h3>
+      <p>Custom logo designs that reflect your brand’s identity with creativity and clarity.</p>
+    </div>
+    
+    
+  </section>
+
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    
+    <div class="footer-container">
+      <div class="footer-column">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="main.html">Home</a></li>
+          <li><a href="Design.html">Our Design</a></li>
+          <li><a href="sample.html">Portfolio</a></li>
+          <li><a href="Services.html">Our Services</a></li>
+          <li><a href="Book.html">Book Your Service</a></li>
+          <li><a href="about.html">About Us</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="#">Social Media Advertising</a></li>
+          <li><a href="#">Traditional Advertising</a></li>
+          <li><a href="#">Marketing Campaigns</a></li>
+          <li><a href="#">Social Media Handling</a></li>
+          <li><a href="#">Web & SEO Solutions</a></li>
+          <li><a href="#">Website</a></li>
+          <li><a href="#">Photoshoot</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h4>Contact</h4>
+        <p>
+          <a href="https://mail.google.com/mail/?view=cm&fs=1&to=team@alphamarkex.com" target="_blank" style="color: inherit; text-decoration: none;">
+            team@alphamarkex.com
+          </a>
+        </p>
+        <p>
+          <a href="tel:+919235860901" style="color: inherit; text-decoration: none;">
+            +91 9235860901
+          </a>
+        </p>
+        <div class="social-icons">
+          <a href="https://www.instagram.com/alphamarkex/?__pwa=1"><i class="fab fa-instagram"></i></a>
+          <a href="https://x.com/AlphaMarkex"><i class="fab fa-x-twitter"></i></i></a>
+          <a href="https://www.facebook.com/profile.php?id=61574942258668"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://www.youtube.com/@AlphaMarkeX"><i class="fab fa-youtube"></i></a>
+          <a href="https://wa.me/919235860901"><i class="fab fa-whatsapp"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; 2025 Alphamarkex. All rights reserved.
+    </div>
+
+    
+    
+  </footer>
+  
+  <script>
+    const hamburger = document.getElementById("hamburger-btn");
+    const mobileMenu = document.getElementById("mobile-menu");
+  
+    hamburger.addEventListener("click", () => {
+      mobileMenu.classList.toggle("show");
+    });
+  </script>
+  
+</body>
+</html>
