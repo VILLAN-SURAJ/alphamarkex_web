@@ -1,0 +1,245 @@
+.bot-icon {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #007BFF;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  cursor: pointer;
+  transition: transform 0.2s;
+  z-index: 1000;
+}
+
+.bot-icon:hover {
+  transform: scale(1.05);
+}
+
+.bot-icon img {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+}
+
+/* Chat Window */
+.chat-container {
+  position: fixed;
+  bottom: 90px;
+  right: 20px;
+  width: 320px;
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  animation: slideUp 0.3s ease forwards;
+  z-index: 999;
+  max-height: 500px;
+}
+
+@keyframes slideUp {
+  from { 
+    transform: translateY(20px); 
+    opacity: 0; 
+  }
+  to { 
+    transform: translateY(0); 
+    opacity: 1; 
+  }
+}
+
+.chat-header {
+  background: linear-gradient(135deg, #007BFF, #00c6ff);
+  padding: 12px 15px;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-weight: bold;
+}
+
+.chat-header img {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  margin-right: 8px;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+}
+
+.close-btn {
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 20px;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: background-color 0.2s;
+}
+
+.close-btn:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Chat Area */
+.chat-box {
+  padding: 15px;
+  height: 280px;
+  overflow-y: auto;
+  background: #f1f8fc;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.message {
+  display: flex;
+  align-items: flex-end;
+  margin-bottom: 8px;
+}
+
+.message.bot {
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+.message.user {
+  justify-content: flex-end;
+}
+
+.bot-avatar {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  margin-right: 8px;
+  flex-shrink: 0;
+}
+
+.bubble {
+  padding: 10px 12px;
+  border-radius: 12px;
+  font-size: 14px;
+  max-width: 75%;
+  animation: fadeIn 0.3s ease;
+  word-wrap: break-word;
+  line-height: 1.4;
+}
+
+.bubble.bot {
+  background: #e0f7fa;
+  color: #333;
+}
+
+.bubble.user {
+  background: #007BFF;
+  color: white;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Quick Reply Buttons */
+.quick-buttons {
+  padding: 12px;
+  text-align: center;
+  background: #f4faff;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  justify-content: center;
+  max-height: 120px;
+  overflow-y: auto;
+}
+
+.quick-buttons button {
+  background: linear-gradient(135deg, #e7f3ff, #d0e7ff);
+  color: #007BFF;
+  font-size: 12px;
+  padding: 6px 10px;
+  border-radius: 15px;
+  border: 1px solid rgba(0, 123, 255, 0.2);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.quick-buttons button:hover {
+  background: linear-gradient(135deg, #007BFF, #00c6ff);
+  color: white;
+  transform: translateY(-1px);
+}
+
+/* Scrollbar styling */
+.chat-box::-webkit-scrollbar,
+.quick-buttons::-webkit-scrollbar {
+  width: 4px;
+}
+
+.chat-box::-webkit-scrollbar-track,
+.quick-buttons::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.chat-box::-webkit-scrollbar-thumb,
+.quick-buttons::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 2px;
+}
+
+.chat-box::-webkit-scrollbar-thumb:hover,
+.quick-buttons::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .bot-icon {
+    bottom: 15px;
+    right: 15px;
+    width: 55px;
+    height: 55px;
+  }
+
+  .bot-icon img {
+    width: 30px;
+    height: 30px;
+  }
+
+  .chat-container {
+    bottom: 80px;
+    right: 15px;
+    left: 15px;
+    width: auto;
+    max-width: none;
+  }
+
+  .quick-buttons {
+    padding: 10px;
+    gap: 4px;
+  }
+
+  .quick-buttons button {
+    font-size: 11px;
+    padding: 5px 8px;
+  }
+}

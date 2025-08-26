@@ -1,0 +1,402 @@
+.design {
+  animation: fadeIn 1s ease-in;
+}
+
+.design main {
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.design h1 {
+  text-align: center;
+  font-size: 36px;
+  margin-bottom: 60px;
+  font-weight: bold;
+  animation: fadeInDown 1s ease-out;
+  color: var(--text);
+}
+
+.design-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+  margin-bottom: 100px;
+}
+
+.design-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 50px;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.8s ease;
+  padding: 40px 0;
+}
+
+.design-row.animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.design-row.reverse {
+  flex-direction: row-reverse;
+}
+
+.design-card {
+  width: 48%;
+  min-width: 300px;
+  aspect-ratio: 1 / 1;
+  background-color: #f5f5f5;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+  transition: all 0.4s ease;
+  position: relative;
+}
+
+.design-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+}
+
+.design-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(0,123,255,0.1), rgba(0,123,255,0.05));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 1;
+}
+
+.design-card:hover::before {
+  opacity: 1;
+}
+
+.design-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.design-card:hover img {
+  transform: scale(1.05);
+}
+
+.design-description {
+  width: 48%;
+  min-width: 300px;
+  font-size: 16px;
+  line-height: 1.8;
+  color: #333;
+  padding: 20px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.design-description h2 {
+  color: #003366;
+  font-size: 32px;
+  margin-bottom: 20px;
+  font-weight: 700;
+  animation: slideIn 1s ease-in-out;
+  position: relative;
+}
+
+.design-description h2::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 60px;
+  height: 3px;
+  background: var(--accent);
+  border-radius: 2px;
+}
+
+.design-description p {
+  font-size: 17px;
+  line-height: 1.7;
+  color: #555;
+  text-align: justify;
+}
+
+/* Design Showcase Section */
+.design-showcase {
+  margin: 100px 0;
+  padding: 60px 40px;
+  background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+  border-radius: 20px;
+  text-align: center;
+}
+
+.design-showcase h2 {
+  font-size: 36px;
+  color: var(--text);
+  margin-bottom: 50px;
+  font-weight: 700;
+}
+
+.philosophy-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 40px;
+  text-align: left;
+}
+
+.philosophy-text {
+  background: white;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+}
+
+.philosophy-text:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+}
+
+.philosophy-text h3 {
+  font-size: 24px;
+  color: var(--accent);
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+.philosophy-text p {
+  font-size: 16px;
+  line-height: 1.7;
+  color: #555;
+  margin: 0;
+}
+
+/* Call to Action */
+.design-cta {
+  background: linear-gradient(135deg, var(--accent), var(--accent-hover));
+  padding: 80px 40px;
+  border-radius: 20px;
+  text-align: center;
+  color: white;
+  margin-top: 80px;
+}
+
+.cta-content h2 {
+  font-size: 36px;
+  margin-bottom: 20px;
+  font-weight: 700;
+  color: white;
+}
+
+.cta-content p {
+  font-size: 18px;
+  margin-bottom: 40px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
+  opacity: 0.95;
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.cta-buttons .btn {
+  padding: 15px 30px;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border: 2px solid white;
+}
+
+.cta-buttons .btn-primary {
+  background: white;
+  color: var(--accent);
+}
+
+.cta-buttons .btn-primary:hover {
+  background: rgba(255, 255, 255, 0.9);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(255, 255, 255, 0.3);
+}
+
+.cta-buttons .btn-secondary {
+  background: transparent;
+  color: white;
+}
+
+.cta-buttons .btn-secondary:hover {
+  background: white;
+  color: var(--accent);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(255, 255, 255, 0.3);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .design main {
+    padding: 20px 15px;
+  }
+
+  .design h1 {
+    font-size: 28px;
+    margin-bottom: 40px;
+  }
+
+  .design-grid {
+    gap: 50px;
+    margin-bottom: 60px;
+  }
+
+  .design-row {
+    flex-direction: column !important;
+    text-align: center;
+    gap: 30px;
+    padding: 20px 0;
+  }
+
+  .design-row.reverse {
+    flex-direction: column !important;
+  }
+
+  .design-card,
+  .design-description {
+    width: 100%;
+    min-width: auto;
+  }
+
+  .design-card {
+    max-width: 400px;
+    margin: 0 auto;
+  }
+
+  .design-description {
+    text-align: center;
+    padding: 0;
+  }
+
+  .design-description h2 {
+    font-size: 26px;
+    text-align: center;
+  }
+
+  .design-description h2::after {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .design-description p {
+    font-size: 16px;
+    text-align: center;
+  }
+
+  .design-showcase {
+    margin: 60px 0;
+    padding: 40px 20px;
+  }
+
+  .design-showcase h2 {
+    font-size: 28px;
+    margin-bottom: 30px;
+  }
+
+  .philosophy-content {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  .philosophy-text {
+    padding: 25px 20px;
+  }
+
+  .philosophy-text h3 {
+    font-size: 20px;
+    text-align: center;
+  }
+
+  .philosophy-text p {
+    font-size: 15px;
+    text-align: center;
+  }
+
+  .design-cta {
+    padding: 60px 20px;
+    margin-top: 60px;
+  }
+
+  .cta-content h2 {
+    font-size: 26px;
+  }
+
+  .cta-content p {
+    font-size: 16px;
+    margin-bottom: 30px;
+  }
+
+  .cta-buttons {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+
+  .cta-buttons .btn {
+    width: 100%;
+    max-width: 250px;
+    padding: 12px 25px;
+  }
+}
+
+/* Tablet Responsiveness */
+@media (max-width: 1024px) and (min-width: 769px) {
+  .design-row {
+    gap: 40px;
+  }
+
+  .design-card,
+  .design-description {
+    width: 48%;
+    min-width: 280px;
+  }
+
+  .design-description h2 {
+    font-size: 28px;
+  }
+
+  .design-description p {
+    font-size: 16px;
+  }
+
+  .design-showcase {
+    padding: 50px 30px;
+  }
+
+  .philosophy-content {
+    gap: 30px;
+  }
+}
+
+/* Animation Delays */
+.design-row:nth-child(1) { animation-delay: 0.1s; }
+.design-row:nth-child(2) { animation-delay: 0.3s; }
+.design-row:nth-child(3) { animation-delay: 0.5s; }
+.design-row:nth-child(4) { animation-delay: 0.7s; }
+
+/* Hover Effects */
+.design-row:hover .design-description h2 {
+  color: var(--accent);
+  transition: color 0.3s ease;
+}

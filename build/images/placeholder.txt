@@ -1,0 +1,62 @@
+# Image Assets Directory
+
+This directory should contain the following images from your original project:
+
+## Required Images:
+- logo.png (Alphamarkex logo)
+- alphaman.png (ChatBot avatar)
+- hero-portfolio.png (Hero image for portfolio)
+- favicon.ico (Website favicon)
+
+## Portfolio Images:
+### Bags
+- portfolio/bag1.jpg
+- portfolio/bag2.jpg  
+- portfolio/bag3.jpg
+
+### Packaging
+- portfolio/packaging1.jpg
+- portfolio/packaging2.jpg
+- portfolio/packaging3.jpg
+
+### Photoshoot
+- portfolio/shoot1.jpg
+- portfolio/shoot2.jpg
+- portfolio/shoot3.jpg
+
+### Advertisement
+- portfolio/ad1.png
+- portfolio/ad2.png
+- portfolio/ad3.png
+
+### Thumbnails
+- portfolio/thumb1.png
+- portfolio/thumb2.png
+- portfolio/thumb3.png
+- portfolio/thumb4.png
+
+### Gallery
+- portfolio/frame1.png through frame6.png
+
+## Service Images:
+- brand-management.png
+- portfolio-service.png
+- video-editing.png
+- landing-page.png
+- packaging-design.png
+- paid-ads.png
+- social-management.png
+- seo-service.png
+- website-service.png
+- thumbnails.png
+- packaging-design-showcase.jpg
+- advertisement-design.jpg
+
+## Videos:
+- videos/intro.mp4
+- videos/ad-video.mp4
+
+## Audio:
+- sounds/whoosh.mp3
+
+Copy your original images from the 'public' folder in the old project to this directory structure.

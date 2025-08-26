@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>AlphaMarkex Chatbot</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<style>
+/* Light theme matching AlphaMarkex */
+body {
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0;
+    background: #fefefe;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+header {
+    background: linear-gradient(90deg, #1d4ed8, #3b82f6);
+    padding: 10px;
+    color: white;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+header img {
+    height: 40px;
+    border-radius: 6px;
+}
+
+header h1 {
+    font-size: 1.2rem;
+    margin: 0;
+}
+
+#chatbox {
+    flex: 1;
+    padding: 15px;
+    overflow-y: auto;
+    background: #f4f6fb;
+}
+
+.message {
+    max-width: 75%;
+    padding: 10px 14px;
+    border-radius: 12px;
+    margin-bottom: 10px;
+    animation: fadeInUp 0.3s ease;
+}
+
+.bot {
+    background: #e0e7ff;
+    align-self: flex-start;
+}
+
+.user {
+    background: #3b82f6;
+    color: white;
+    align-self: flex-end;
+}
+
+#inputArea {
+    display: flex;
+    padding: 10px;
+    background: white;
+    border-top: 1px solid #ddd;
+}
+
+#inputArea input {
+    flex: 1;
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+#inputArea button {
+    background: #3b82f6;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    margin-left: 8px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.quick-replies {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 8px;
+}
+
+.quick-replies button {
+    padding: 6px 10px;
+    border: 1px solid #3b82f6;
+    background: white;
+    color: #3b82f6;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.85rem;
+}
+
+.quick-replies button:hover {
+    background: #3b82f6;
+    color: white;
+}
+
+/* Animation for smooth message appearance */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+</style>
+</head>
+<body>
+
+<header>
+    <img src="alphamarkex-logo.png" alt="AlphaMarkex Logo">
+    <h1>AlphaMan Chatbot</h1>
+</header>
+
+<div id="chatbox"></div>
+
+<div id="inputArea">
+    <input type="text" id="userInput" placeholder="Type your message..." autofocus>
+    <button onclick="sendMessage()">Send</button>
+</div>
+
+<script>
+let step = 0;
+const chatbox = document.getElementById("chatbox");
+const userInput = document.getElementById("userInput");
+
+const quickRepliesList = ["Hi", "Services", "Booking", "Pricing", "Contact", "Portfolio", "About Us", "Latest Offers", "Team Info"];
+
+function addMessage(text, sender = "bot") {
+    const msg = document.createElement("div");
+    msg.classList.add("message", sender);
+    msg.textContent = text;
+    chatbox.appendChild(msg);
+    chatbox.scrollTop = chatbox.scrollHeight;
+}
+
+function addQuickReplies() {
+    const qr = document.createElement("div");
+    qr.classList.add("quick-replies");
+    quickRepliesList.forEach(q => {
+        const btn = document.createElement("button");
+        btn.textContent = q;
+        btn.onclick = () => handleUserMessage(q);
+        qr.appendChild(btn);
+    });
+    chatbox.appendChild(qr);
+    chatbox.scrollTop = chatbox.scrollHeight;
+}
+
+function handleUserMessage(text) {
+    addMessage(text, "user");
+    setTimeout(() => botResponse(text), 400);
+}
+
+function botResponse(input) {
+    let reply = "";
+    if (step === 0) {
+        reply = "Hi! Can I have your name?";
+        step++;
+    } else if (step === 1) {
+        reply = `Nice to meet you, ${input}! Could you please share your Gmail address?`;
+        step++;
+    } else if (step === 2) {
+        reply = "Thanks! How can I help you today?";
+        addQuickReplies();
+        step++;
+    } else {
+        reply = `You said: "${input}". For further queries, please contact us at contact@alphamarkex.com`;
+    }
+    addMessage(reply);
+}
+
+function sendMessage() {
+    const text = userInput.value.trim();
+    if (!text) return;
+    handleUserMessage(text);
+    userInput.value = "";
+}
+
+// Initial welcome
+addMessage("Hello! I’m AlphaMan, your friendly AlphaMarkex assistant.");
+botResponse();
+</script>
+
+</body>
+</html>
